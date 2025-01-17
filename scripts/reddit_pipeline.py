@@ -6,6 +6,8 @@ import praw
 import boto3
 from dotenv import load_dotenv
 import logging
+import requests
+
 
 # Configure logging
 logging.basicConfig(
@@ -21,9 +23,9 @@ class RedditS3Pipeline:
         
         # Initialize Reddit client
         self.reddit = praw.Reddit(
-            client_id=os.getenv('REDDIT_CLIENT_ID'),
-            client_secret=os.getenv('REDDIT_CLIENT_SECRET'),
-            user_agent=os.getenv('REDDIT_USER_AGENT')
+            client_id=os.getenv('reddit_id'),
+            client_secret=os.getenv('secret_key'),
+            user_agent=os.getenv('user_agent')
         )
         
         # Initialize S3 client
