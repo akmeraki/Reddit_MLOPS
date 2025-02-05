@@ -18,6 +18,7 @@ logger = logging.getLogger(__name__)
 
 class RedditS3Pipeline:
     def __init__(self):
+        
         # Load environment variables
         load_dotenv()
         
